@@ -6,7 +6,38 @@
 <meta charset="UTF-8">
 <title>상품 구매</title>
 <script type="text/javascript">
-	
+	window.onload=function(){
+		const myForm = document.getElementById('myForm');
+		// 이벤트 연결
+		myForm.onsubmit=function(){
+			const name= document.getElementById('name');
+			if(name.value.trim()==''){
+				alert('이름을 입력하세요.');
+				name.value = '';
+				name.focus();
+				return false;
+			}
+			const order_date = document.getElementById('order_date');
+			if(order_date.value==''){ // date형식이기 때문에 trim X
+				alert('배송희망일을 입력하세요!');
+				order_date.focus();
+				return false;				
+			}
+			
+			const items = document.getElementsByName('item');
+			let check = false;
+			for(let i=0;i<items.length;i++){
+				if(items[i].checked){
+					check = true;
+					break;
+				}
+			}
+			if(!check){
+				alert('상품은 하나 이상 꼭 선택하세요!');
+				return false;
+			}
+		}
+	}
 </script>
 </head>
 <body>

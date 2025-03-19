@@ -44,7 +44,7 @@
 <%
 		} // end of for
 		// 배송비 구하기
-		if(sum >= 300000) sum += delivery_fee;
+		if(sum < 300000) sum += delivery_fee;
 		else delivery_fee = 0;
 %>
 	<br>
