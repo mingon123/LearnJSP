@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>클라이언트 및 서버 정보</title>
+<title>클라이언트 및 서버 정보</title><%-- 꼭 암기 --%>
 </head>
 <body>
 클라이언트IP = <%= request.getRemoteAddr() %><br><%-- localhost -> 192.168.0.128로 변경하면 내 IP 확인 가능 --%>

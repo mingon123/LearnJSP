@@ -1,0 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%-- 단독실행X, include되는 용도로만 사용(변수 공유 용도) --%>
+<%
+// 공용 변수로 사용하기 위해 변수 선언 및 초기화
+String img_path = "./image";
+String file_path = "./file";
+%>
