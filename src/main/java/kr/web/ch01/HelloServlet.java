@@ -8,7 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+    
 // 서블릿에서 사용 주소 명시
 @WebServlet("/hello") // 파일을 그대로 보여주는 것이 아니라 암호화하여 보여줌(사용하지 않으면 tomcat에서 막아 404에러뜸
 public class HelloServlet extends HttpServlet{

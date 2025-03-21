@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body{
+	padding:0;
+	margin:0;
+}
+.page-main{
+	width:800px;
+	margin:0 auto;
+}
+.result-display{
+	width:400px;
+	height:400px;
+	margin:50px auto; 
+	border:1px solid #000;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.align-center{
+	text-align:center;
+}
+.align-right{
+	text-align:right;
+}
