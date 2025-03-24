@@ -14,7 +14,7 @@
 </head>
 <body>
 세션 ID : <%= session.getId() %><br>
-세션 생성 시간 : <%= session.getCreationTime() %><br>
+세션 생성 시간 : <%= session.getCreationTime() %><br> <%-- 세션은 한번만들어지면 30분 동안 유지, 재접속 시 30분으로 다시 초기화 --%>
 <%
 	time.setTime(session.getCreationTime());
 %>
@@ -29,8 +29,7 @@
 세션 유지 시간 변경하기(기본 세션 유지 시간은 30분임)<br>
 <%
 	session.setMaxInactiveInterval(60*20);
-	//web.xml에 50분으로 지정된 상태임(jsp에서 셋팅한 정보가
-	//현재 세션에 우선 반영됨)
+	// web.xml에 50분으로 지정된 상태임(jsp에서 셋팅한 정보가 현재 세션에 우선 반영됨)
 %>
 세션 유지 시간 : <%= session.getMaxInactiveInterval() %>초
 </body>

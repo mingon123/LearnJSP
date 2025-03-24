@@ -15,7 +15,7 @@ import jakarta.servlet.http.Part;
  * maxFileSize : 개별 파일의 전송 가능한 최대 크기
  * maxRequestSize : 전송되는 모든 파일의 용량을 합친 최대 크기
  */
-@MultipartConfig(
+@MultipartConfig( // 사이즈는 무조건 설정해줘야함
 		maxFileSize = 1024 * 1024 * 5,
 		maxRequestSize = 1024 * 1024 * 10
 		)

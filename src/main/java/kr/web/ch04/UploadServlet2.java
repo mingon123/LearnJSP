@@ -41,7 +41,7 @@ public class UploadServlet2 extends HttpServlet{
 			} // if
 			
 			Part part2 = request.getPart("uploadFile2");
-			String fileName2 = part2.getSubmittedFileName();
+			String fileName2 = part2.getSubmittedFileName();							// Collection을 쓰면 이게 항상 null이어서 getHeader로 대체함
 			if (!fileName2.isEmpty()) {
 				part2.write(realFolder+"/"+fileName2);
 				out.println("<img src=\"/servletJsp/upload/"+fileName2+"\"><br>");
