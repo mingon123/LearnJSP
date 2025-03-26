@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width;initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>할 일 목록(TodoList)</title>
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.2.3/dist/css/bootstrap.min.css"><!-- CDN방식 -->
 <style type="text/css">
@@ -69,7 +69,7 @@
 						output += '<li class="list-group-item">';
 						output += '<span class="pointer check-btn" id="'+item.id+'" data-check="'+item.completed+'">'+item.todo+'(작성일:'+item.created+')</span>';
 					}
-					output += '<span class="float-end badge bg-secondary pointer delete-btn">삭제</span>';
+					output += '<span class="float-end badge bg-secondary pointer delete-btn" id="'+item.id+'">삭제</span>';
 					output += '</li>';
 					$('#list').append(output);
 				});
@@ -118,6 +118,51 @@
 	// 등록 - 추가 버튼 이벤트 연결
 	$('#add_btn').click(function(){
 		addTodo();
+	});
+	
+	// 삭제 이벤트 연결
+	$(document).on('click','.delete-btn',function(){ // 미래이벤트(동적으로 추가되는 요소에 이벤트를 적용할 때)는 document해야 함. 이벤트명,이벤트핸들러,완료 후
+		// 서버와 통신
+		$.ajax({
+			url:'deleteTodo.jsp',
+			type:'post',
+			data:{id:$(this).attr('id')},
+			dataType:'json',
+			success:function(param){
+				if(param.result == 'success'){
+					// 목록 호출
+					selectList();
+				}else{
+					// 할 일 삭제 실패
+					alert('할 일 삭제 오류 발생!');
+				}
+			},
+			error:function(){
+				alert('네트워크 오류 발생');
+			}
+		});
+	})
+	// 할 일 체크 이벤트 연결
+	$(document).on('click','.check-btn',function(){
+		// 서버와 통신
+		$.ajax({
+			url:'updateTodo.jsp',
+			type:'post',
+			data:{id:$(this).attr('id'),completed:$(this).attr('data-check')},
+			dataType:'json',
+			success:function(param){
+				if(param.result=='success'){
+					// 목록 호출
+					selectList();
+				}else{
+					// 할 일 체크/해제 실패
+					alert('할 일 체크 오류 발생!');
+				}
+			},
+			error:function(){
+				alert('네트워크 오류 발생');
+			}	
+		});
 	});
 </script>
 </body>
