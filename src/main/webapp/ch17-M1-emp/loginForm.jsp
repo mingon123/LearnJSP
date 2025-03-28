@@ -9,12 +9,11 @@
 <script type="text/javascript">
 	window.onload=function(){
 		const form = document.getElementById('login_form');
-		// 이벤트 연결
 		form.onsubmit=function(){
 			const id = document.getElementById('id');
 			if(id.value.trim()==''){
 				alert('id를 입력하세요');
-				id.value = '';
+				id.value='';
 				id.focus();
 			}
 			const passwd = document.getElementById('passwd');
@@ -24,7 +23,7 @@
 				passwd.focus();
 				return false;
 			}
-		};
+		}
 	}
 </script>
 </head>

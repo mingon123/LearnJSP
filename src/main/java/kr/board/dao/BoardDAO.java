@@ -108,17 +108,14 @@ public class BoardDAO {
 				// 자바빈을 ArrayList에 저장
 				list.add(boardVO);
 			}
-			
 		}catch(Exception e) {
 			throw new Exception(e);
 		}finally {
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
-		
-		
-		
 		return list;
 	}
+	
 	// 글 상세
 	public BoardVO getBoard(long board_num)throws Exception{
 		Connection conn = null;

@@ -109,10 +109,9 @@ public class MemberDAO {
 			if(rs.next()) {
 				member = new MemberVO();
 				member.setId(rs.getString("id"));
-				member.setNum(rs.getInt("num"));
+				member.setNum(rs.getLong("num"));
 				member.setPasswd(rs.getString("passwd"));
 			}
-			
 		}catch(Exception e) {
 			throw new Exception(e);
 		}finally {
@@ -191,9 +190,6 @@ public class MemberDAO {
 			DBUtil.executeClose(null, pstmt2, null); // 2개인 경우 pstmt 순서는 상관 없으나 conn은 마지막에만 정리할 수 있도록 함
 			DBUtil.executeClose(null, pstmt, conn);
 		}
-		
-		
-		
-		
+
 	}
 }
