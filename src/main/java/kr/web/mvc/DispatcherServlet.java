@@ -40,7 +40,12 @@ public class DispatcherServlet extends HttpServlet{
 			com = new ListAction();
 		}else if(command.equals("/write.do")) {
 			com = new WriteAction();
+		}else if(command.equals("/detail.do")) {
+			com = new DetailAction();
+		}else if(command.equals("/update.do")) {
+			com = new UpdateAction();
 		}
+		
 		try {
 			//  데이터 처리 후 뷰 경로 반환
 			view = com.execute(request, response);
