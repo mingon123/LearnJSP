@@ -38,7 +38,7 @@
 </script>
 </head>
 <body>
-<div class="page_main">
+<div class="page-main">
 	<h1>글 수정</h1>
 	<form id="update_form" action="update.jsp" method="post">
 		<input type="hidden" name="board_num" value="<%= board_num %>">
