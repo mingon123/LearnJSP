@@ -13,7 +13,6 @@
 <head>
 <meta charset="UTF-8">
 <title>사원 상세 정보</title>
-
 </head>
 <body>
 <% 
