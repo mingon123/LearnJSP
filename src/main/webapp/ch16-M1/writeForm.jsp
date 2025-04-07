@@ -31,7 +31,7 @@
 </script>
 </head>
 <body>
-<div class="page_main">
+<div class="page-main">
 	<h1>글쓰기</h1>
 	<form id="write_form" action="write.jsp" method="post">
 		<ul>

@@ -155,7 +155,7 @@ public class EmployeeDAO {
 			throw new Exception(e);
 		}finally {
 			DBUtil.executeClose(null, pstmt2, null); 
-//			DBUtil.executeClose(null, pstmt, conn);
+			DBUtil.executeClose(null, pstmt, conn);
 		}
 	}
 	
