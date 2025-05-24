@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery를 이용한 비동기 통신 구현</title>
+</head>
+<body>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 서버에 데이터를 전송하고 서버에서 보내준 데이터(텍스트)를 처리
+		$.ajax({
+			url:'myParam.jsp', // 요청 URL
+			data:{name:'하하',age:21}, // json형식으로 출력할 수 있도록 함(객체 형태) - 요청 URL로 데이터를 보냄
+			success:function(param){ // 서버의 응답이 성공했을 때 호출
+				$('body').append(param);
+			}
+		});
+	});
+</script><!-- 검사-네트워크에서 확인해보면 방식을 명시하지 않으면 기본 : get방식 -->
+</body>
+</html>
