@@ -210,7 +210,7 @@
 				<c:forEach var="order" items="${orderList}">
 				<tr>
 					<td>${order.order_num}</td>
-					<td><a href="${pageContext.request.contextPath}/order/orderdetail.do?order_num=${order.order_num}" target="_blank">${fn:substring(order.item_name,0,26)}</a></td>
+					<td><a href="${pageContext.request.contextPath}/order/orderDetail.do?order_num=${order.order_num}" target="_blank">${fn:substring(order.item_name,0,26)}</a></td>
 					<td>${order.reg_date}</td>
 					<td>${order.statusName}</td>
 				</tr>
